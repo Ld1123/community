@@ -26,7 +26,7 @@
         </div>
       </el-scrollbar>
       <div class="tree_content">
-        <p style="font-size:18px;">部门备注:</p>
+        <p style="font-size:18px;" :note='note'>部门备注:{{note}}</p>
         <p style="padding-top:10px">{{clickBranchItem.remarks}}</p>
       </div>
     </div>
@@ -95,12 +95,13 @@ export default {
   name: 'divMan',
   data() {
     return {
+      note:'',
       addDrawer:false,
       addSubDialog:false,
       contextMenu:null,
       currMenuItem:{},//保存右键点击的选项
       clickBranchItem:{remarks:""},//保存点击的部门
-      treeData:null,
+      
       defaultProps: {
         children: 'children',
         label: 'branch_name'
